@@ -96,3 +96,14 @@ while (attempt <= 3) {
     alert('WRONG!!! You have ' + (4 - attempt) + ' more tries! Your answer was too HIGH');
   }
 }
+var topMovies = ['RETURN TO OZ', 'FIGHT CLUB', 'DONNIE DARKO', 'THE DARK CRYSTAL', 'STAR WARS', 'LABYRINTH', 'NEVER ENDING STORY', 'LITTLE MONSTERS', 'PULP FICTION', 'THE AVENGERS'];
+var attemptQuestion7 = 0;
+while (attemptQuestion7 < 7) {
+  var seventhQuestion = prompt ('What is one of my top 10 movies? (you have ' + (6 - attemptQuestion7) + ' guesses');
+  console.log('seventhQuestion: ' + seventhQuestion);
+}
+//for (var attemptQuestion7 = 0; attemptQuestion7 < 7; )
+// //for (var i = 0; i < 9; i++) {
+//    console.log(i);
+//
+//}
