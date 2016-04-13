@@ -66,3 +66,33 @@ else
 {
   alert ('Please move on');
 }
+
+alert('The next question is going to ask for a number between 1 and 50. The answer is NOT on this page. It is a complete guess! May the force be with you...');
+
+var attempt = 0;
+var answerQuestionSix = 30;
+while (attempt <= 3) {
+  var sixthQuestion = prompt ('How many countries have I been to? (you have ' + (4 - attempt) + ' guesses)');
+  console.log('sixthQuestion: ' + sixthQuestion);
+  if (parseInt(sixthQuestion) === answerQuestionSix)
+  {
+    alert('That is correct! Nice Job!');
+    attempt += 10;
+    console.log ('user got question 6 correct');
+  }else if (isNaN(parseInt(sixthQuestion)))
+  {
+    attempt++;
+    console.log ('user did not input a number');
+    alert('That is not a number!!! You have ' + (4 - attempt) + ' more tries');
+  }else if (parseInt(sixthQuestion) < answerQuestionSix)
+  {
+    attempt++;
+    console.log ('user guessed too low');
+    alert('WRONG!!! You have ' + (4 - attempt) + ' more tries! Your answer was too LOW');
+  }else if (parseInt(sixthQuestion) > answerQuestionSix)
+  {
+    attempt++;
+    console.log ('user guessed too high');
+    alert('WRONG!!! You have ' + (4 - attempt) + ' more tries! Your answer was too HIGH');
+  }
+}
