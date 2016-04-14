@@ -96,14 +96,39 @@ while (attempt <= 3) {
     alert('WRONG!!! You have ' + (4 - attempt) + ' more tries! Your answer was too HIGH');
   }
 }
-var topMovies = ['RETURN TO OZ', 'FIGHT CLUB', 'DONNIE DARKO', 'THE DARK CRYSTAL', 'STAR WARS', 'LABYRINTH', 'NEVER ENDING STORY', 'LITTLE MONSTERS', 'PULP FICTION', 'THE AVENGERS'];
+var movieList = ['RETURN TO OZ', ' FIGHT CLUB', ' DONNIE DARKO', ' THE DARK CRYSTAL', ' STAR WARS', ' LABYRINTH', ' NEVER ENDING STORY', ' LITTLE MONSTERS', ' PULP FICTION', ' THE AVENGERS '];
 var attemptQuestion7 = 0;
-while (attemptQuestion7 < 7) {
-  var seventhQuestion = prompt ('What is one of my top 10 movies? (you have ' + (6 - attemptQuestion7) + ' guesses');
+
+while (attemptQuestion7 < 5) {
+  var seventhQuestion = prompt ('What is one of my top 10 movies? (you have ' + (6 - attemptQuestion7) + ' guesses)');
   console.log('seventhQuestion: ' + seventhQuestion);
+  if (seventhQuestion.toUpperCase() == 'RETURN TO OZ' || seventhQuestion.toUpperCase() == 'FIGHT CLUB' || seventhQuestion.toUpperCase() == 'DONNIE DARKO' || seventhQuestion.toUpperCase() == 'THE DARK CRYSTAL' || seventhQuestion.toUpperCase() == 'STAR WARS' || seventhQuestion.toUpperCase() == 'LABYRINTH' || seventhQuestion.toUpperCase() == 'NEVER ENDING STORY' || seventhQuestion.toUpperCase() == 'LITTLE MONSTERS' || seventhQuestion.toUpperCase() == 'PULP FICTION')
+  {
+    alert('Yay, you did it!!! The list of accepted answers was: ' + movieList);
+    attemptQuestion7 += 10;
+    console.log ('user got question 7 correct');
+  }
+  else
+  {
+    alert('You guessed wrong!');
+    attemptQuestion7++;
+    console.log ('user guessed incorrect');
+  }
 }
-//for (var attemptQuestion7 = 0; attemptQuestion7 < 7; )
-// //for (var i = 0; i < 9; i++) {
-//    console.log(i);
-//
-//}
+
+while (attemptQuestion7 < 6) {
+  var seventhQuestion = prompt ('What is one of my top 10 movies? (you have 1 guess left!!! Think wisely. Or, Ya know... look!)');
+  console.log('seventhQuestion: ' + seventhQuestion);
+  if (seventhQuestion.toUpperCase() == 'RETURN TO OZ' || seventhQuestion.toUpperCase() == 'FIGHT CLUB' || seventhQuestion.toUpperCase() == 'DONNIE DARKO' || seventhQuestion.toUpperCase() == 'THE DARK CRYSTAL' || seventhQuestion.toUpperCase() == 'STAR WARS' || seventhQuestion.toUpperCase() == 'LABYRINTH' || seventhQuestion.toUpperCase() == 'NEVER ENDING STORY' || seventhQuestion.toUpperCase() == 'LITTLE MONSTERS' || seventhQuestion.toUpperCase() == 'PULP FICTION')
+  {
+    alert('Yay, you did it!!! The list of accepted answers was: ' + movieList);
+    attemptQuestion7 += 10;
+    console.log ('user got question 7 correct');
+  }
+  else
+  {
+    alert('You were not able to guess ONE of my top TEN movies... The list of accepted answers was: ' + movieList);
+    attemptQuestion7 += 10;
+    console.log ('user guessed incorrect');
+  }
+}
