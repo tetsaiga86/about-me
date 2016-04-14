@@ -1,79 +1,110 @@
 var question = 7;
 var correct = 0;
 
+var questionArray = ['Is one of my hobbies coding?','Was I born in Washington?','Was my last job at Joongbu University?','Were my last three jobs in circus animal training?','Will you hire me?'];
+
+var answersArray = [['yes','y'], ['no','n'],['yes','y'],['no','n'],['yes','y']];
+var wrongArray = [['no','n'],['yes','y'],['no','n'],['yes','y'],['no','n']];
+var correctResponses = ['Good Job, you passed round 1!','Good Job, you passed round 2!','Good Job, you passed round 3!','Good Job, you passed round 4!','Congratulations, you win me!!! The bestest prize of all!!!!!' ];
+var incorrectResponses = ['You failed this one. So, so much fail...', 'You failed this one. So, so much fail...','You failed this one. So, so much fail...','You failed this one. So, so much fail...','You will be the first to be conquered, when I take over the world!!!' ];
+
+var incorrect = 'directions are hard';
+
 var userName = prompt('Welcome to the land of magic and Mystery!!! Who might you be?');
 console.log('The user\'s name is ' + userName);
 
 alert('Hey there, person of great interest... I mean ' + userName + ' I\'m going to ask you some questions about myself to determine that you can read. Please answer Y or N!!!');
-var userResponse = prompt('Is one of my hobbies coding?');
-console.log('userResponse: ' + userResponse);
 
-if (userResponse.toLowerCase() === 'y' || userResponse.toLowerCase() === 'yes')
-{
-  alert ('Good Job! You passed round 1!');
-  correct++;
-} else if (userResponse.toLowerCase() === 'n' || userResponse.toLowerCase() === 'no'){
-  alert ('You failed this one. So, so much fail...');
-} else {
-  alert ('directions are hard');
+function useQuestions(i){
+  var userInput = prompt(questionArray[i]).toLowerCase();
+  if(userInput === answersArray[i][0] || userInput === answersArray[i][1])
+  {
+    alert(correctResponses[i]);
+    correct++;
+  }
+  else if(userInput === wrongArray[i][0] || userInput === wrongArray[i][1])
+  {
+    alert(incorrectResponses[i]);
+  }
+  else{
+    alert(incorrect);
+  }
 }
 
-var secondQuestion = prompt ('Was I born in Washington?');
-console.log('secondQuestion: ' + secondQuestion);
-
-if (secondQuestion.toLowerCase() === 'n' || secondQuestion.toLowerCase() === 'no')
+for(var i = 0; i < answersArray.length; i++)
 {
-  alert ('Good Job! You passed round 2!');
-  correct++;
-} else if (secondQuestion.toLowerCase() === 'y' || secondQuestion.toLowerCase() === 'yes'){
-  alert ('You failed this one. So, so much fail...');
-} else {
-  alert ('directions are hard');
+  useQuestions(i);
 }
-
-var thirdQuestion = prompt('Was my last job at Joongbu University?');
-console.log('thirdQuestion: ' + thirdQuestion);
-
-if (thirdQuestion.toLowerCase() === 'y' || thirdQuestion.toLowerCase() === 'yes')
-{
-  alert ('Good Job! You passed round 3!');
-  correct++;
-} else if (thirdQuestion.toLowerCase() === 'n' || thirdQuestion.toLowerCase() === 'no'){
-  alert ('You failed this one. So, so much fail...');
-} else {
-  alert ('directions are hard');
-}
-
-var fifthQuestion = prompt('Were my last three jobs in circus animal training?');
-console.log('fifthQuestion: ' + fifthQuestion);
-
-if (fifthQuestion.toLowerCase() === 'n' || fifthQuestion.toLowerCase() === 'no')
-{
-  alert ('Good Job! You passed round 4!');
-  correct++;
-} else if (fifthQuestion.toLowerCase() === 'y' || fifthQuestion.toLowerCase() === 'yes')
-{
-  alert ('You failed this one. So, so much fail...');
-} else{
-  alert ('directions are hard');
-}
-
-var fourthQuestion = prompt('Will you hire me?');
-console.log('fourthQuestion: ' + fourthQuestion);
-
-if (fourthQuestion.toLowerCase() === 'y' || fourthQuestion.toLowerCase() === 'yes')
-{
-  alert ('Congratulations, you win me!!! The bestest prize of all!!!!!');
-  correct++;
-}
-else if (fourthQuestion.toLowerCase() === 'n' || fourthQuestion.toLowerCase() === 'no')
-{
-  alert ('You will be the first to be conquered, when I take over the world!!!');
-}
-else
-{
-  alert ('Please move on');
-}
+//
+// var userResponse = prompt('Is one of my hobbies coding?');
+// console.log('userResponse: ' + userResponse);
+//
+// if (userResponse.toLowerCase() === 'y' || userResponse.toLowerCase() === 'yes')
+// {
+//   alert ('Good Job! You passed round 1!');
+//   correct++;
+// } else if (userResponse.toLowerCase() === 'n' || userResponse.toLowerCase() === 'no'){
+//   alert ('You failed this one. So, so much fail...');
+// } else {
+//   alert ('directions are hard');
+// }
+//
+// var secondQuestion = prompt ('Was I born in Washington?');
+// console.log('secondQuestion: ' + secondQuestion);
+//
+// if (secondQuestion.toLowerCase() === 'n' || secondQuestion.toLowerCase() === 'no')
+// {
+//   alert ('Good Job! You passed round 2!');
+//   correct++;
+// } else if (secondQuestion.toLowerCase() === 'y' || secondQuestion.toLowerCase() === 'yes'){
+//   alert ('You failed this one. So, so much fail...');
+// } else {
+//   alert ('directions are hard');
+// }
+//
+// var thirdQuestion = prompt('Was my last job at Joongbu University?');
+// console.log('thirdQuestion: ' + thirdQuestion);
+//
+// if (thirdQuestion.toLowerCase() === 'y' || thirdQuestion.toLowerCase() === 'yes')
+// {
+//   alert ('Good Job! You passed round 3!');
+//   correct++;
+// } else if (thirdQuestion.toLowerCase() === 'n' || thirdQuestion.toLowerCase() === 'no'){
+//   alert ('You failed this one. So, so much fail...');
+// } else {
+//   alert ('directions are hard');
+// }
+//
+// var fifthQuestion = prompt('Were my last three jobs in circus animal training?');
+// console.log('fifthQuestion: ' + fifthQuestion);
+//
+// if (fifthQuestion.toLowerCase() === 'n' || fifthQuestion.toLowerCase() === 'no')
+// {
+//   alert ('Good Job! You passed round 4!');
+//   correct++;
+// } else if (fifthQuestion.toLowerCase() === 'y' || fifthQuestion.toLowerCase() === 'yes')
+// {
+//   alert ('You failed this one. So, so much fail...');
+// } else{
+//   alert ('directions are hard');
+// }
+//
+// var fourthQuestion = prompt('Will you hire me?');
+// console.log('fourthQuestion: ' + fourthQuestion);
+//
+// if (fourthQuestion.toLowerCase() === 'y' || fourthQuestion.toLowerCase() === 'yes')
+// {
+//   alert ('Congratulations, you win me!!! The bestest prize of all!!!!!');
+//   correct++;
+// }
+// else if (fourthQuestion.toLowerCase() === 'n' || fourthQuestion.toLowerCase() === 'no')
+// {
+//   alert ('You will be the first to be conquered, when I take over the world!!!');
+// }
+// else
+// {
+//   alert ('Please move on');
+// }
 
 alert('The next question is going to ask for a number between 1 and 50. The answer is NOT on this page. It is a complete guess! May the force be with you...');
 
