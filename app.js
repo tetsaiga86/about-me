@@ -1,3 +1,6 @@
+var question = 7;
+var correct = 0;
+
 var userName = prompt('Welcome to the land of magic and Mystery!!! Who might you be?');
 console.log('The user\'s name is ' + userName);
 
@@ -8,6 +11,7 @@ console.log('userResponse: ' + userResponse);
 if (userResponse.toLowerCase() === 'y' || userResponse.toLowerCase() === 'yes')
 {
   alert ('Good Job! You passed round 1!');
+  correct++;
 } else if (userResponse.toLowerCase() === 'n' || userResponse.toLowerCase() === 'no'){
   alert ('You failed this one. So, so much fail...');
 } else {
@@ -20,6 +24,7 @@ console.log('secondQuestion: ' + secondQuestion);
 if (secondQuestion.toLowerCase() === 'n' || secondQuestion.toLowerCase() === 'no')
 {
   alert ('Good Job! You passed round 2!');
+  correct++;
 } else if (secondQuestion.toLowerCase() === 'y' || secondQuestion.toLowerCase() === 'yes'){
   alert ('You failed this one. So, so much fail...');
 } else {
@@ -32,6 +37,7 @@ console.log('thirdQuestion: ' + thirdQuestion);
 if (thirdQuestion.toLowerCase() === 'y' || thirdQuestion.toLowerCase() === 'yes')
 {
   alert ('Good Job! You passed round 3!');
+  correct++;
 } else if (thirdQuestion.toLowerCase() === 'n' || thirdQuestion.toLowerCase() === 'no'){
   alert ('You failed this one. So, so much fail...');
 } else {
@@ -44,6 +50,7 @@ console.log('fifthQuestion: ' + fifthQuestion);
 if (fifthQuestion.toLowerCase() === 'n' || fifthQuestion.toLowerCase() === 'no')
 {
   alert ('Good Job! You passed round 4!');
+  correct++;
 } else if (fifthQuestion.toLowerCase() === 'y' || fifthQuestion.toLowerCase() === 'yes')
 {
   alert ('You failed this one. So, so much fail...');
@@ -57,6 +64,7 @@ console.log('fourthQuestion: ' + fourthQuestion);
 if (fourthQuestion.toLowerCase() === 'y' || fourthQuestion.toLowerCase() === 'yes')
 {
   alert ('Congratulations, you win me!!! The bestest prize of all!!!!!');
+  correct++;
 }
 else if (fourthQuestion.toLowerCase() === 'n' || fourthQuestion.toLowerCase() === 'no')
 {
@@ -77,6 +85,7 @@ while (attempt <= 3) {
   if (parseInt(sixthQuestion) === answerQuestionSix)
   {
     alert('That is correct! Nice Job!');
+    correct++;
     attempt += 10;
     console.log ('user got question 6 correct');
   }else if (isNaN(parseInt(sixthQuestion)))
@@ -107,6 +116,7 @@ while (attemptQuestion7 < 5) {
     alert('Yay, you did it!!! The list of accepted answers was: ' + movieList);
     attemptQuestion7 += 10;
     console.log ('user got question 7 correct');
+    correct++;
   }
   else
   {
@@ -123,6 +133,7 @@ while (attemptQuestion7 < 6) {
   {
     alert('Yay, you did it!!! The list of accepted answers was: ' + movieList);
     attemptQuestion7 += 10;
+    correct++;
     console.log ('user got question 7 correct');
   }
   else
@@ -131,4 +142,13 @@ while (attemptQuestion7 < 6) {
     attemptQuestion7 += 10;
     console.log ('user guessed incorrect');
   }
+}
+
+if (correct > 5)
+{
+  alert('Congratulations ' + userName + '! you got ' + correct + ' out of ' + question + ' correct!!!! Well done!');
+}
+else
+{
+  alert('I hope you feel shame ' + userName + '! you only got ' + correct + ' out of ' + question + ' correct...');
 }
